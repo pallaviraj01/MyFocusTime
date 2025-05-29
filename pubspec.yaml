@@ -26,3 +26,7 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+  assets:
+
+    - assets/focus_timer1.jpg
+    - assets/focus_timer2.jpg

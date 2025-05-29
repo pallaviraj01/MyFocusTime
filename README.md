@@ -14,7 +14,8 @@ Helps you stay focused using a countdown timer, local notifications, and a calmi
 
 ## 📸 Screenshots
 
-*Coming soon*
+<img src="assets/focus_timer1.jpg" width="300"/>
+<img src="assets/focus_timer2.jpg" width="300"/>
 
 ## 🚀 Getting Started
 
