@@ -12,7 +12,6 @@ void main() async {
       await Permission.notification.isPermanentlyDenied) {
     await Permission.notification.request();
   }
-
   await NotificationService.init();
 
   runApp(const ProviderScope(child: MyApp()));
