@@ -1,4 +1,4 @@
-# 🧘‍♂️ MyFocusTime
+# 🧘‍♂️ MyFocusTime (Under development)
 
 **A beautifully simple focus timer app built with Flutter.**  
 Helps you stay focused using a countdown timer, local notifications, and a calming UI.
