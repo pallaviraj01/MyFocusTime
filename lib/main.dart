@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:my_focus_time/screens/home_screen.dart';
+import 'package:my_focus_time/presentation/screens/home_screen.dart';
 import 'services/notification_service.dart';
 
 void main() async {
@@ -20,7 +20,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
+  @override 
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MyFocusTime',

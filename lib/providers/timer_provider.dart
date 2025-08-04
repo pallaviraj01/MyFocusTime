@@ -17,60 +17,32 @@ class TimerNotifier extends StateNotifier<TimerState> {
 
     state = state.copyWith(isRunning: true);
 
-    // Show initial notification when starting
-    NotificationService.showTimerNotification(_formattedTime());
+    // Show ONE persistent notification (not repeating every second)
+    NotificationService.showPersistentNotification();
 
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (state.remainingSeconds == 0) {
         _timer?.cancel();
         state = state.copyWith(isRunning: false);
-        NotificationService.cancelNotification(); // Cancel notification when finished
+        NotificationService.cancelNotification();
       } else {
         state = state.copyWith(remainingSeconds: state.remainingSeconds - 1);
-        // Update notification with new time
-        NotificationService.showTimerNotification(_formattedTime());
+        // No notification update here anymore
       }
     });
   }
 
-  //  void startTimer() {
-  //   if (state.isRunning) return;
-
-  //   state = state.copyWith(isRunning: true);
-
-  //   // Show initial notification with sound/vibration
-  //   NotificationService.showTimerNotification(_formattedTime());
-
-  //   _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-  //     if (state.remainingSeconds == 0) {
-  //       _timer?.cancel();
-  //       state = state.copyWith(isRunning: false);
-  //       NotificationService.cancelNotification();
-  //     } else {
-  //       state = state.copyWith(remainingSeconds: state.remainingSeconds - 1);
-  //       // Update notification silently on each tick
-  //       NotificationService.updateTimerNotification(_formattedTime());
-  //     }
-  //   });
-  // }
-
-  
 
   void pauseTimer() {
     _timer?.cancel();
     state = state.copyWith(isRunning: false);
-    NotificationService.cancelNotification(); // Cancel when paused
+    NotificationService.cancelNotification();
   }
 
   void resetTimer() {
     _timer?.cancel();
     state = TimerState(remainingSeconds: 1500, isRunning: false);
-    NotificationService.cancelNotification(); // Cancel when reset
+    NotificationService.cancelNotification();
   }
 
-  String _formattedTime() {
-    final min = (state.remainingSeconds ~/ 60).toString().padLeft(2, '0');
-    final sec = (state.remainingSeconds % 60).toString().padLeft(2, '0');
-    return '$min:$sec';
-  }
 }
