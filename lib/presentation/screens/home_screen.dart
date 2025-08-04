@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../providers/timer_provider.dart';
+import '../../providers/timer_provider.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -82,7 +82,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                     children: [
                       const SizedBox(height: 50),
                       Text(
-                        "🧘‍♂️ Focus Time - $minutes:$seconds",
+                        "🧘‍♂️ Focus Time - 25:00",
                         style: GoogleFonts.raleway(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
